@@ -7,7 +7,23 @@
 </head>
 
 <body>
-   <h1>Triangle page</h1>
+   <ul>
+      <li><a href="/triangle">Triangle</a></li>
+      <li><a href="/circle">circle</a></li>
+   </ul>
+   <h1>Triangle Calculator</h1>
+
+   <form action="/triangle" method="POST">
+      <div style="margin-bottom: 10px;">
+         <label for="base">Base:</label>
+         <input style="margin-left: 12px;" type="text" name="base" id="base">
+      </div>
+      <div style="margin-bottom: 10px;">
+         <label for="height">Height:</label>
+         <input type="text" name="height" id="height">
+      </div>
+      <button type="submit">Calculate</button>
+   </form>
    
 </body>
 </html>
