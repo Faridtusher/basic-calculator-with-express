@@ -5,18 +5,14 @@ const hostname = '127.0.0.1'
 const bodyParser = require('body-parser')
 
 
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
-
 
 // create the home page
 app.get('/', (req, res) =>{
    res.sendFile(__dirname+'/view/menu.html')
 })
-
 
 // req and response the triangle page
 app.get('/triangle', (req, res) =>{
@@ -38,19 +34,14 @@ app.get('/circle', (req, res) =>{
 
 app.post('/circle', (req, res) =>{
    const radius = req.body.radius;
-   res.send(`The radius of ${radius} is : ${radius}`)
+   const calculateRadius = 3.1416*radius*radius;
+   res.send(`The circle of ${radius} is : ${calculateRadius} radius.`)
 })
-
-
-
 
 // create the not found page
 app.use((req, res) =>{
    res.send('<h2>404!!! Not found</h2>')
 })
-
-
-
 
 module.exports = {
    app,
